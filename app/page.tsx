@@ -108,42 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why">
-        <Reveal className="wrap reveal">
-          <p className="label">03 / Client Feedback</p>
-          <h2>Good Work Should Speak for Itself.</h2>
-          <p>
-            Every project is an opportunity to create something useful, meaningful, and tailored to the people who use
-            it.
-          </p>
-          <div className="banner" role="note">
-            <strong>Sample reviews.</strong> These are placeholder reviews for layout only, not from real customers.
-            Replace them with real feedback, shared with permission, before launch.
-          </div>
-          <div className="rv-grid">
-            {REVIEWS.map((r, i) => (
-              <Reveal key={r.name} className="fb rv" style={idx(i)}>
-                <div className="fb-h">
-                  <div className="av" aria-hidden="true">SC</div>
-                  <div>
-                    <div className="fb-n">{r.name}</div>
-                    <div className="fb-s">Sample date</div>
-                  </div>
-                  {r.sample && <span className="tag">Sample</span>}
-                </div>
-                <div className="fb-r"><ThumbIcon />Recommends LHIMF Dev</div>
-                <p>{r.text}</p>
-                <div className="fb-a">
-                  <span><ThumbIcon />Like</span>
-                  <span>Comment</span>
-                  <span>Share</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
+    
       <section id="contact">
         <Reveal className="wrap reveal">
           <p className="label">04 / Let&apos;s Work Together</p>
