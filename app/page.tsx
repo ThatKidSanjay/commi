@@ -7,6 +7,7 @@ import ProgressBar from "@/components/ProgressBar";
 import Reveal from "@/components/Reveal";
 import Social from "@/components/Social";
 import Navigation from "@/components/Navigation";
+import ReviewSection from "@/components/ReviewSection";
 
 const ALL_TECH = [...new Set(TECH.flatMap((group) => group[2]))];
 
@@ -59,6 +60,7 @@ export default function Home() {
           </div>
         </div>
       </header>
+      <ReviewSection />
 
       <section className="home-tech" id="stack" aria-label="Technology stack">
         <div className="marq" aria-label={ALL_TECH.join(", ")}>
@@ -77,7 +79,7 @@ export default function Home() {
 
       <section className="home-contact" id="contact">
         <Reveal className="wrap reveal">
-          <p className="label">01 / LET'S WORK TOGETHER</p>
+          <p className="label">02 / LET'S WORK TOGETHER</p>
 
           <div className="home-contact-heading">
             <h2>

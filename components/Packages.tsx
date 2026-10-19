@@ -15,7 +15,7 @@ type PackageItem = {
 const websitePackages: PackageItem[] = [
   {
     name: "Portfolio Website",
-    price: "₱999",
+    price: "₱1,499",
     pages: "Up to 3 pages",
     description:
       "Showcase your skills, experience, and projects with a professional personal portfolio.",
@@ -33,7 +33,7 @@ const websitePackages: PackageItem[] = [
   },
   {
     name: "Event & Invitation Website",
-    price: "₱999",
+    price: "₱1,499",
     pages: "1 page",
     description:
       "A personalized digital invitation for weddings, birthdays, debuts, and special occasions.",
@@ -54,7 +54,7 @@ const websitePackages: PackageItem[] = [
   },
   {
     name: "Business Website",
-    price: "₱3,999",
+    price: "₱4,999",
     pages: "Up to 5 pages",
     description:
       "Build your online presence and help customers discover your business and services.",
@@ -74,7 +74,7 @@ const websitePackages: PackageItem[] = [
   },
   {
     name: "Corporate / Internal Systems",
-    price: "₱4,499",
+    price: "₱7,499",
     pages: "Up to 5 pages or screens",
     description:
       "Streamline basic business processes with a customized web-based system.",
@@ -95,7 +95,7 @@ const websitePackages: PackageItem[] = [
   },
   {
     name: "Community / Organization Website",
-    price: "₱4,999",
+    price: "₱5,999",
     pages: "Up to 6 pages",
     description:
       "Give your organization a central place to share its identity, activities, and announcements.",
@@ -119,7 +119,7 @@ const websitePackages: PackageItem[] = [
 const nfcPackages: PackageItem[] = [
   {
     name: "Basic NFC Card",
-    price: "₱500",
+    price: "₱599",
     pages: "1-page digital profile",
     description:
       "A simple tap-to-share digital profile for personal contact information.",
@@ -138,7 +138,7 @@ const nfcPackages: PackageItem[] = [
   },
   {
     name: "Personalized Card",
-    price: "₱750",
+    price: "₱999",
     pages: "1-page digital profile",
     description:
       "A personalized digital business card with custom styling and convenient contact sharing.",
@@ -156,7 +156,7 @@ const nfcPackages: PackageItem[] = [
   },
   {
     name: "Business Profile",
-    price: "₱1,000",
+    price: "₱1,499",
     pages: "1-page business profile",
     description:
       "A professional digital profile designed to present your business and help customers connect.",
@@ -177,7 +177,7 @@ const nfcPackages: PackageItem[] = [
   },
   {
     name: "Premium Profile",
-    price: "₱1,500",
+    price: "₱2,499",
     pages: "1-page premium business profile",
     description:
       "An enhanced business profile with product showcases, promotional sections, and analytics.",
@@ -197,7 +197,7 @@ const nfcPackages: PackageItem[] = [
   },
   {
     name: "Business Plus",
-    price: "₱2,000+",
+    price: "₱3,999",
     pages: "1 customized profile",
     description:
       "A more flexible digital business profile with expanded listings and additional custom features.",

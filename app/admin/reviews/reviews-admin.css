@@ -1,0 +1,483 @@
+
+.review-admin {
+  min-height: 100vh;
+  padding: 48px 24px 80px;
+  background: #f7f8f6;
+  color: #18231d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-admin * {
+  box-sizing: border-box;
+}
+
+.admin-header,
+.admin-review-top,
+.admin-review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.admin-header {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+.admin-eyebrow {
+  margin: 0 0 12px;
+  color: #53715e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.review-admin h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 44px);
+  letter-spacing: -0.045em;
+}
+
+.admin-muted {
+  color: #758078;
+  line-height: 1.65;
+}
+
+.admin-login {
+  width: 100%;
+  max-width: 420px;
+  margin: 10vh auto 0;
+  padding: 32px;
+  border: 1px solid #e5e9e4;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.admin-login > p {
+  margin-bottom: 24px;
+}
+
+.admin-login-form {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-login-form label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-login-form input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #dce2dc;
+  border-radius: 9px;
+  background: #fff;
+  color: #18231d;
+  font: inherit;
+}
+
+.review-admin button {
+  min-height: 40px;
+  padding: 10px 15px;
+  border: 1px solid #183d2a;
+  border-radius: 9px;
+  background: #183d2a;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 160ms ease, background 160ms ease;
+}
+
+.review-admin button:hover:not(:disabled) {
+  opacity: 0.86;
+}
+
+.review-admin button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.review-admin .admin-button-light {
+  border-color: #dce2dc;
+  background: #fff;
+  color: #26362c;
+}
+
+.admin-stats,
+.admin-review-list {
+  display: grid;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admin-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 28px;
+}
+
+.admin-stat {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid #e5e9e4;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.admin-stat span {
+  color: #758078;
+  font-size: 13px;
+}
+
+.admin-stat strong {
+  font-size: 32px;
+  letter-spacing: -0.04em;
+}
+
+.admin-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  max-width: 1100px;
+  margin: 0 auto 20px;
+}
+
+.review-admin .admin-filter {
+  border-color: #e0e5df;
+  background: #fff;
+  color: #344238;
+}
+
+.review-admin .admin-filter.active {
+  border-color: #183d2a;
+  background: #183d2a;
+  color: #fff;
+}
+
+.review-admin .admin-refresh {
+  margin-left: auto;
+  border-color: #dce2dc;
+  background: transparent;
+  color: #344238;
+}
+
+.admin-review-card,
+.admin-empty {
+  padding: 24px;
+  border: 1px solid #e5e9e4;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.admin-review-top h2,
+.admin-empty h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.admin-review-top p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.admin-status {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-status.pending {
+  background: #fff2d8;
+  color: #875d12;
+}
+
+.admin-status.published {
+  background: #e5f4e8;
+  color: #236c39;
+}
+
+.admin-stars {
+  margin-top: 18px;
+  color: #d49b28;
+  letter-spacing: 0.08em;
+}
+
+.admin-review-message {
+  margin: 12px 0;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+/* Review image thumbnails */
+.review-admin .admin-review-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.review-admin .admin-review-image {
+  display: block;
+  flex: 0 0 112px;
+  width: 112px;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e5e9e4;
+  border-radius: 9px;
+  background: #f1f3f0;
+  cursor: zoom-in;
+  opacity: 1;
+}
+
+.review-admin .admin-review-image:hover {
+  opacity: 1;
+}
+
+.admin-review-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.review-admin .admin-review-image:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+.admin-review-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #edf0ec;
+}
+
+.admin-review-footer time {
+  color: #758078;
+  font-size: 12px;
+}
+
+.admin-error,
+.admin-notice {
+  max-width: 1100px;
+  margin: 16px auto;
+  padding: 12px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.admin-error {
+  background: #fff0ee;
+  color: #a52b20;
+}
+
+.admin-notice {
+  background: #e8f5eb;
+  color: #236c39;
+}
+
+.admin-empty {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Full-screen image viewer */
+.image-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: rgba(8, 12, 9, 0.92);
+  backdrop-filter: blur(6px);
+  animation: image-preview-fade-in 160ms ease;
+}
+
+.image-preview-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  height: min(82vh, 900px);
+}
+
+.image-preview-full {
+  display: block;
+  max-width: calc(100% - 140px);
+  max-height: calc(100% - 60px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Viewer buttons override the general dashboard button styles */
+.review-admin .image-preview-close,
+.review-admin .image-preview-nav {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 1;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.review-admin .image-preview-close:hover,
+.review-admin .image-preview-nav:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+.review-admin .image-preview-close {
+  top: -16px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.review-admin .image-preview-nav {
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.review-admin .image-preview-nav:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.review-admin .image-preview-prev {
+  left: 0;
+}
+
+.review-admin .image-preview-next {
+  right: 0;
+}
+
+.image-preview-caption {
+  position: absolute;
+  right: 0;
+  bottom: -24px;
+  left: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  text-align: center;
+}
+
+@keyframes image-preview-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .review-admin {
+    padding: 28px 16px 56px;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stat {
+    padding: 16px;
+  }
+
+  .admin-review-card {
+    padding: 17px;
+  }
+
+  .admin-review-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .review-admin .admin-refresh {
+    margin-left: 0;
+  }
+
+  .image-preview-overlay {
+    padding: 12px;
+  }
+
+  .image-preview-modal {
+    height: 75vh;
+  }
+
+  .image-preview-full {
+    max-width: calc(100% - 76px);
+    max-height: calc(100% - 60px);
+  }
+
+  .review-admin .image-preview-close {
+    top: -38px;
+    right: 0;
+    width: 38px;
+    height: 38px;
+  }
+
+  .review-admin .image-preview-nav {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .image-preview-caption {
+    bottom: -28px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-preview-overlay {
+    animation: none;
+  }
+
+  .admin-review-image img {
+    transition: none;
+  }
+}
