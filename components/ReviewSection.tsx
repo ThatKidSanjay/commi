@@ -646,51 +646,80 @@ export default function ReviewSection() {
                 {message.length}/1000
               </div>
 
-              <label htmlFor="review-images">
-                Add photos (optional)
-              </label>
+              <div className="review-upload-field">
+                <label htmlFor="review-images">
+                  Add photos (optional)
+                </label>
 
-              <input
-                id="review-images"
-                type="file"
-                accept="image/jpeg,image/png,image/webp"
-                multiple
-                onChange={handleFileChange}
-                disabled={
-                  submitting ||
-                  selectedFiles.length >= MAX_IMAGES
-                }
-              />
+                <input
+                  id="review-images"
+                  className="review-file-input"
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  multiple
+                  onChange={handleFileChange}
+                  disabled={
+                    submitting ||
+                    selectedFiles.length >= MAX_IMAGES
+                  }
+                  aria-describedby="review-upload-hint review-upload-count"
+                />
 
-              <p className="review-form-description">
-                Up to 3 photos. JPEG, PNG, or WebP.
-                Maximum 4 MB each.
-              </p>
+                <label
+                  htmlFor="review-images"
+                  className={`review-upload-dropzone ${
+                    selectedFiles.length >= MAX_IMAGES ? "is-disabled" : ""
+                  }`}
+                  aria-disabled={
+                    submitting || selectedFiles.length >= MAX_IMAGES
+                  }
+                >
+                  <span className="review-upload-icon" aria-hidden="true">
+                    +
+                  </span>
+                  <span className="review-upload-title">
+                    {selectedFiles.length >= MAX_IMAGES
+                      ? "Maximum photos reached"
+                      : "Choose photos to upload"}
+                  </span>
+                  <span className="review-upload-hint" id="review-upload-hint">
+                    JPEG, PNG, or WebP · Up to 4 MB each
+                  </span>
+                </label>
 
-              {previews.length > 0 && (
-                <div className="review-image-previews">
-                  {previews.map((url, index) => (
-                    <div
-                      className="review-image-preview"
-                      key={url}
-                    >
-                      <img
-                        src={url}
-                        alt={`Selected image ${index + 1}`}
-                      />
-
-                      <button
-                        type="button"
-                        onClick={() => removeImage(index)}
-                        disabled={submitting}
-                        aria-label={`Remove image ${index + 1}`}
+                {previews.length > 0 && (
+                  <div className="review-image-previews">
+                    {previews.map((url, index) => (
+                      <div
+                        className="review-image-preview"
+                        key={url}
                       >
-                        Remove
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
+                        <img
+                          src={url}
+                          alt={`Selected image ${index + 1}`}
+                        />
+
+                        <span className="review-image-number">
+                          Photo {index + 1}
+                        </span>
+
+                        <button
+                          type="button"
+                          onClick={() => removeImage(index)}
+                          disabled={submitting}
+                          aria-label={`Remove image ${index + 1}`}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <p className="review-upload-count" id="review-upload-count">
+                  {selectedFiles.length} of {MAX_IMAGES} photos selected
+                </p>
+              </div>
 
               <button
                 className="review-submit"

@@ -2,6 +2,7 @@
 import Navigation from "@/components/Navigation";
 import Social from "@/components/Social";
 import Packages from "@/components/Packages";
+import Footer from "@/components/Footer";
 
 export default function PackagesPage() {
   return (
@@ -65,28 +66,7 @@ export default function PackagesPage() {
         </section>
       </main>
 
-      <footer className="site-footer" id="contact">
-        <div className="wrap">
-          <div className="site-footer-main">
-            <div className="site-footer-brand">
-              <a className="site-wordmark" href="/">
-                LHIMF <span>Dev.</span>
-              </a>
-
-              <p className="site-footer-copy">
-                Custom websites built around your goals.
-              </p>
-
-              <Social style={{ margin: 0 }} />
-            </div>
-          </div>
-
-          <div className="site-footer-bottom">
-            <span>© {new Date().getFullYear()} LHIMF DEV</span>
-            <a href="#top">BACK TO TOP ↑</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

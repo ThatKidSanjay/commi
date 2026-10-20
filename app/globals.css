@@ -5108,3 +5108,1201 @@ footer .row {
     transition: none;
   }
 }
+/* LHIMF review photo uploader */
+.review-upload-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.review-upload-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 140px;
+  padding: 24px 16px;
+  border: 1px dashed #b8c2ba;
+  border-radius: 12px;
+  background: #fafbf9;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.review-upload-dropzone:hover {
+  border-color: #18352c;
+  background: #f2f5f1;
+}
+
+.review-upload-dropzone.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.review-upload-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d6ddd6;
+  border-radius: 50%;
+  color: #18352c;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.review-upload-title {
+  color: #18352c;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.review-upload-hint {
+  color: #737d75;
+  font-size: 12px;
+}
+
+.review-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.review-file-input:focus-visible + .review-upload-dropzone {
+  outline: 2px solid #18352c;
+  outline-offset: 3px;
+}
+
+.review-image-previews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.review-image-preview {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.review-image-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #e1e5e0;
+  border-radius: 9px;
+  background: #f3f4f2;
+}
+
+.review-image-number {
+  overflow: hidden;
+  color: #59645c;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-image-preview button {
+  padding: 7px 5px;
+  border: 1px solid #dedede;
+  border-radius: 7px;
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.review-image-preview button:hover {
+  border-color: #b42318;
+  color: #b42318;
+}
+
+.review-image-preview button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.review-upload-count {
+  margin: 0;
+  color: #737d75;
+  font-size: 12px;
+}
+
+@media (max-width: 380px) {
+  .review-image-previews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+
+/* =========================================================
+   LHIMF HOMEPAGE EXPANSION
+   Append to the end of globals.css
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+.lh-section {
+  padding: 100px 0;
+  border-top: 1px solid var(--line);
+}
+
+.lh-section h2,
+.lh-tech-heading h2 {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  font-weight: 600;
+}
+
+.lh-section h2 span,
+.lh-tech-heading h2 span {
+  color: var(--mute);
+}
+
+.lh-section-heading {
+  margin-bottom: 48px;
+}
+
+.lh-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 18px;
+}
+
+.lh-heading-row > p {
+  max-width: 390px;
+  margin: 0 0 5px;
+  color: var(--mute);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  color: var(--fg);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--fg);
+  padding-bottom: 7px;
+  transition: opacity 180ms ease, gap 180ms ease;
+}
+
+.text-link:hover {
+  opacity: 0.65;
+  gap: 17px;
+}
+
+.text-link span {
+  color: inherit;
+}
+
+/* ABOUT */
+
+.lh-about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+  gap: 8%;
+  margin-top: 18px;
+}
+
+.lh-about-grid h2 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+}
+
+.lh-about-copy {
+  padding-top: 8px;
+}
+
+.lh-about-copy p {
+  margin: 0 0 18px;
+  color: var(--mute);
+  font-size: 0.98rem;
+  line-height: 1.9;
+}
+
+.lh-about-copy .text-link {
+  margin-top: 12px;
+}
+
+.lh-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 70px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.lh-principle {
+  padding: 28px 28px 30px 0;
+}
+
+.lh-principle + .lh-principle {
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.lh-principle-number {
+  display: block;
+  margin-bottom: 30px;
+  color: var(--mute);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.lh-principle h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+}
+
+.lh-principle p {
+  margin: 0;
+  max-width: 330px;
+  color: var(--mute);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* SERVICES */
+
+.lh-services {
+  background: var(--soft);
+}
+
+.lh-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lh-service-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.lh-service-card:hover {
+  border-color: var(--fg);
+  transform: translateY(-3px);
+}
+
+.lh-card-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mute);
+  font-size: 0.76rem;
+}
+
+.lh-card-top span:last-child {
+  color: var(--fg);
+  font-size: 1rem;
+}
+
+.lh-service-card h3 {
+  margin: 35px 0 12px;
+  font-size: 1.3rem;
+  letter-spacing: -0.04em;
+}
+
+.lh-service-card > p {
+  margin: 0 0 20px;
+  color: var(--mute);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.lh-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.lh-tags span,
+.lh-package-types span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.lh-service-card .text-link {
+  margin-top: auto;
+}
+
+/* PACKAGES PREVIEW */
+
+.lh-packages-preview {
+  background: var(--bg);
+}
+
+.lh-packages-panel {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 9%;
+  padding: clamp(28px, 6vw, 70px);
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.lh-packages-panel h2 {
+  margin: 22px 0;
+}
+
+.lh-packages-panel > div:first-child > p:not(.label) {
+  max-width: 550px;
+  color: var(--mute);
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.lh-package-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.lh-package-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.lh-package-mark {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.09em;
+}
+
+.lh-package-mark > span {
+  color: var(--mute);
+}
+
+.lh-package-action p {
+  margin: 15px 0 24px;
+  color: var(--mute);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.lh-package-action .btn {
+  margin-bottom: 20px;
+}
+
+/* PROJECTS */
+
+.lh-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 42px 18px;
+}
+
+.lh-project-card {
+  min-width: 0;
+}
+
+.lh-project-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
+    linear-gradient(45deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
+    var(--soft);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.lh-project-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 350ms ease;
+}
+
+.lh-project-image:hover img {
+  transform: scale(1.025);
+}
+
+.lh-project-image-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 7px 9px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.lh-project-image-arrow {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.lh-project-image:hover .lh-project-image-arrow {
+  color: var(--bg);
+  background: var(--fg);
+}
+
+.lh-project-image-missing::after {
+  content: "LHIMF PROJECT";
+  color: var(--mute);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+}
+
+.lh-project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 19px;
+}
+
+.lh-project-category {
+  color: var(--mute);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lh-project-info h3 {
+  margin: 8px 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  letter-spacing: -0.04em;
+}
+
+.lh-project-open {
+  display: grid;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.lh-project-card > p {
+  max-width: 550px;
+  margin: 12px 0 0;
+  color: var(--mute);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.lh-portfolio-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 45px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+
+.lh-portfolio-bottom > span {
+  color: var(--mute);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+/* PROCESS */
+
+.lh-process {
+  background: var(--soft);
+}
+
+.lh-process-list {
+  border-top: 1px solid var(--line);
+}
+
+.lh-process-step {
+  display: grid;
+  grid-template-columns: 70px minmax(170px, 0.85fr) 1.15fr 24px;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lh-process-number {
+  color: var(--mute);
+  font-size: 0.75rem;
+}
+
+.lh-process-step h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+}
+
+.lh-process-step p {
+  margin: 0;
+  color: var(--mute);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.lh-process-arrow {
+  justify-self: end;
+}
+
+/* TECHNOLOGY */
+
+.lh-tech-section {
+  padding: 80px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.lh-tech-heading {
+  margin-bottom: 40px;
+}
+
+.lh-tech-heading h2 {
+  margin-top: 18px;
+}
+
+/* FAQ */
+
+.lh-faq-layout {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  align-items: start;
+  gap: 10%;
+}
+
+.lh-faq-intro h2 {
+  margin-top: 18px;
+}
+
+.lh-faq-intro > p:not(.label) {
+  max-width: 350px;
+  margin: 24px 0;
+  color: var(--mute);
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+
+.lh-faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.lh-faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.lh-faq-item summary {
+  display: grid;
+  grid-template-columns: 34px 1fr 24px;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.lh-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.lh-faq-number {
+  color: var(--mute);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.lh-faq-icon {
+  justify-self: end;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: transform 180ms ease;
+}
+
+.lh-faq-item[open] .lh-faq-icon {
+  transform: rotate(45deg);
+}
+
+.lh-faq-item > p {
+  margin: -2px 30px 22px 46px;
+  color: var(--mute);
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+/* CONTACT */
+
+.lh-contact {
+  background: var(--soft);
+}
+
+.lh-contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 40px 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.lh-contact-details > div {
+  min-width: 0;
+}
+
+.lh-contact-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--mute);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.lh-contact-details a {
+  color: var(--fg);
+  overflow-wrap: anywhere;
+}
+
+.lh-contact-details p {
+  margin: 0 0 12px;
+  color: var(--mute);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.lh-contact .home-contact-form {
+  padding: clamp(20px, 4vw, 38px);
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+/* FOOTER */
+
+.lh-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lh-footer-links a {
+  color: var(--fg);
+  font-size: 0.7rem;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+.lh-footer-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .lh-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lh-packages-panel {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .lh-package-action {
+    padding: 30px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .lh-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .lh-faq-intro > p:not(.label) {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .lh-section {
+    padding: 70px 0;
+  }
+
+  .lh-heading-row {
+    display: block;
+  }
+
+  .lh-heading-row > p {
+    margin-top: 22px;
+  }
+
+  .lh-heading-row > .text-link {
+    margin-top: 22px;
+  }
+
+  .lh-about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .lh-principles {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .lh-principle,
+  .lh-principle + .lh-principle {
+    padding: 22px 0;
+    border-left: 0;
+  }
+
+  .lh-principle + .lh-principle {
+    border-top: 1px solid var(--line);
+  }
+
+  .lh-principle-number {
+    margin-bottom: 16px;
+  }
+
+  .lh-service-grid,
+  .lh-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lh-service-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .lh-service-card h3 {
+    margin-top: 25px;
+  }
+
+  .lh-project-grid {
+    gap: 32px;
+  }
+
+  .lh-process-step {
+    grid-template-columns: 34px 1fr 20px;
+    gap: 12px;
+    padding: 21px 0;
+  }
+
+  .lh-process-step h3 {
+    font-size: 0.98rem;
+  }
+
+  .lh-process-step p {
+    grid-column: 2 / 3;
+  }
+
+  .lh-process-arrow {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .lh-portfolio-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lh-contact-details {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .lh-faq-item summary {
+    grid-template-columns: 26px 1fr 20px;
+    gap: 8px;
+    font-size: 0.88rem;
+  }
+
+  .lh-faq-item > p {
+    margin-left: 34px;
+  }
+
+  .lh-footer-links {
+    gap: 12px;
+  }
+
+  .lh-packages-panel {
+    padding: 24px;
+  }
+
+  .lh-tech-section {
+    padding-top: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .lh-service-card,
+  .lh-project-image img,
+  .lh-project-image-arrow,
+  .lh-faq-icon,
+  .text-link {
+    transition: none;
+  }
+}
+
+
+/* Dedicated FAQ page */
+
+.faq-page-list {
+  max-width: 900px;
+  margin: 48px auto 0;
+  border-top: 1px solid var(--border, #deded8);
+}
+
+.faq-page-item {
+  border-bottom: 1px solid var(--border, #deded8);
+}
+
+.faq-page-item summary {
+  display: grid;
+  grid-template-columns: 42px 1fr 32px;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 4px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-page-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-page-number {
+  color: #858585;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.faq-page-question {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.faq-page-category {
+  color: #777;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.faq-page-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid #d8d8d2;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.faq-page-item[open] .faq-page-icon {
+  transform: rotate(45deg);
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.faq-page-answer {
+  padding: 0 48px 26px 64px;
+}
+
+.faq-page-answer p {
+  max-width: 680px;
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+@media (max-width: 600px) {
+  .faq-page-list {
+    margin-top: 32px;
+  }
+
+  .faq-page-item summary {
+    grid-template-columns: 28px 1fr 28px;
+    gap: 10px;
+    padding: 22px 0;
+  }
+
+  .faq-page-answer {
+    padding: 0 4px 24px 38px;
+  }
+}
+
+
+
+/* Dedicated contact page */
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(36px, 7vw, 100px);
+  align-items: start;
+}
+
+.contact-page-info h2 {
+  margin: 16px 0;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.contact-page-info h2 span,
+.contact-page-form-heading h3 span {
+  color: #777;
+}
+
+.contact-page-info > .sub,
+.contact-page-form-heading > .sub {
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+.contact-page-details {
+  display: grid;
+  gap: 0;
+  margin-top: 36px;
+  border-top: 1px solid #deded8;
+}
+
+.contact-page-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 20px 0;
+  border-bottom: 1px solid #deded8;
+}
+
+.contact-page-label {
+  color: #777;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.contact-page-detail a {
+  width: fit-content;
+  color: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-page-detail a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contact-page-social {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.contact-page-form {
+  padding: clamp(22px, 4vw, 40px);
+  border: 1px solid #deded8;
+  background: #fff;
+}
+
+.contact-page-form-heading {
+  margin-bottom: 28px;
+}
+
+.contact-page-form-heading h3 {
+  margin: 12px 0;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -0.04em;
+}
+
+.contact-page-form .sub {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-page-info h2 {
+    font-size: clamp(36px, 9vw, 52px);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page-form {
+    padding: 22px 18px;
+  }
+}
+/* Keep the landing page typography consistent with the header */
+.lh-home-page,
+.lh-home-page * {
+  font-family: var(--font-sans, inherit);
+}
+
+/* Centered LHIMF footer */
+.lh-footer-centered {
+  padding: 56px 0 24px;
+  text-align: center;
+}
+
+.lh-footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.lh-footer-centered .site-wordmark {
+  display: inline-block;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.lh-footer-centered .site-wordmark span {
+  opacity: 0.5;
+}
+
+.lh-footer-tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.65;
+}
+
+.lh-footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.lh-footer-divider {
+  width: 100%;
+  max-width: 680px;
+  height: 1px;
+  margin: 18px 0 8px;
+  background: currentColor;
+  opacity: 0.14;
+}
+
+.lh-footer-centered .site-footer-bottom {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0;
+  border: 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  opacity: 0.65;
+}
+
+.lh-footer-top {
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.lh-footer-top:hover {
+  opacity: 0.65;
+}
+
+@media (max-width: 600px) {
+  .lh-footer-centered {
+    padding: 44px 0 20px;
+  }
+
+  .lh-footer-centered .site-footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+}
+

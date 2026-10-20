@@ -2,6 +2,7 @@
 import Navigation from "@/components/Navigation";
 import Social from "@/components/Social";
 import Projects from "@/components/Projects";
+import Footer from "@/components/Footer";
 
 export default function ProjectsPage() {
   return (
@@ -59,32 +60,7 @@ export default function ProjectsPage() {
       </main>
 
 
-    <footer className="site-footer">
-           <div className="wrap">
-             <div className="site-footer-main">
-               <div>
-                 <a className="site-wordmark" href="/">
-                   LHIMF <span>Dev.</span>
-                 </a>
-                 <p className="site-footer-copy">Custom websites built around your goals.
-   
-                   <br></br>
-                   <br></br>
-                 </p>
-                 <Social style={{ margin: 0 }} />
-               </div>
-   
-               
-             </div>
-   
-             <div className="site-footer-bottom">
-               <br></br><br></br>
-               <span>© {new Date().getFullYear()} LHIMF DEV</span>
-               <br></br><br></br>
-               <a href="#top">BACK TO TOP ↑</a>
-             </div>
-           </div>
-         </footer>
+    <Footer />
     </div>
   );
 }

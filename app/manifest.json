@@ -1,0 +1,19 @@
+
+{
+  "name": "LHIMF | Custom Website Development",
+  "short_name": "LHIMF",
+  "description": "Affordable, responsive, and customized websites by LHIMF.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
