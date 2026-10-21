@@ -29,7 +29,7 @@ const faqs = [
     category: "PRICING",
     question: "How much does a website cost?",
     answer:
-      "Current starting package prices include ₱999 for portfolio and event or invitation websites, ₱3,999 for business websites, ₱4,499 for corporate or internal systems, and ₱4,999 for community or organization websites. Custom projects may require a separate quotation.",
+      "Current starting package prices include ₱1,499 for portfolio and event or invitation websites, ₱3,999 for business websites, ₱4,499 for corporate or internal systems, and ₱4,999 for community or organization websites. Custom projects may require a separate quotation.",
   },
   {
     category: "PRICING",
@@ -193,9 +193,6 @@ export default function FAQsPage() {
                       Start a Project <span aria-hidden="true">↗</span>
                     </Link>
 
-                    <Link href="/services" className="btn alt">
-                      Explore Services
-                    </Link>
                   </div>
                 </div>
               </div>

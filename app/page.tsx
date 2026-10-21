@@ -52,10 +52,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="home-hero-note">
-                <span>DESIGNED WITH INTENTION</span>
-                <span>BUILT FOR REAL NEEDS</span>
-              </div>
+              
             </Reveal>
           </div>
         </header>

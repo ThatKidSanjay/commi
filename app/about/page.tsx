@@ -80,10 +80,6 @@ export default function AboutPage() {
               <Link className="btn" href="/contact">
                 Start Your Project <span>↗</span>
               </Link>
-
-              <Link className="btn alt" href="/services">
-                Explore Services <span>↓</span>
-              </Link>
             </div>
 
             <div className="home-hero-note">
@@ -114,21 +110,17 @@ export default function AboutPage() {
                   </p>
 
                   <p>
-                    From personal portfolios and event invitations to business
-                    websites and custom systems, the goal is to build websites
-                    that communicate clearly, support real needs, and reflect
-                    the people behind them.
+                    From personal portfolios and event invitations to
+                    business websites and custom systems, the goal is to
+                    build websites that communicate clearly, support real
+                    needs, and reflect the people behind them.
                   </p>
 
                   <p>
-                    No two projects have exactly the same purpose. That is why
-                    each website should be shaped around its intended audience,
-                    requirements, identity, and goals.
+                    No two projects have exactly the same purpose. That is
+                    why each website should be shaped around its intended
+                    audience, requirements, identity, and goals.
                   </p>
-
-                  <Link className="text-link" href="/services">
-                    Discover what we build <span>↗</span>
-                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -136,7 +128,10 @@ export default function AboutPage() {
         </section>
 
         {/* PRINCIPLES */}
-        <section className="lh-section lh-services" id="principles">
+        <section
+          className="lh-section lh-principles"
+          id="principles"
+        >
           <div className="wrap">
             <Reveal className="lh-section-heading reveal">
               <p className="label">02 / OUR APPROACH</p>
@@ -175,7 +170,10 @@ export default function AboutPage() {
         </section>
 
         {/* WHAT WE DO */}
-        <section className="lh-section lh-portfolio" id="capabilities">
+        <section
+          className="lh-section lh-portfolio"
+          id="capabilities"
+        >
           <div className="wrap">
             <Reveal className="lh-section-heading reveal">
               <p className="label">03 / WHAT WE DO</p>
@@ -189,8 +187,8 @@ export default function AboutPage() {
 
                 <p>
                   Whether you need a place to showcase your work or a system
-                  that supports everyday operations, we can discuss the right
-                  starting point for your project.
+                  that supports everyday operations, we can discuss the
+                  right starting point for your project.
                 </p>
               </div>
             </Reveal>
@@ -228,11 +226,16 @@ export default function AboutPage() {
         </section>
 
         {/* WORKING TOGETHER */}
-        <section className="lh-section lh-process" id="working-together">
+        <section
+          className="lh-section lh-process"
+          id="working-together"
+        >
           <div className="wrap">
             <Reveal className="lh-packages-panel reveal">
               <div>
-                <p className="label">04 / YOUR IDEA, YOUR DIRECTION</p>
+                <p className="label">
+                  04 / YOUR IDEA, YOUR DIRECTION
+                </p>
 
                 <h2>
                   Start with what
@@ -241,21 +244,24 @@ export default function AboutPage() {
                 </h2>
 
                 <p>
-                  You do not need every detail figured out before reaching out.
-                  Share your idea, goals, preferred style, and budget. We can
-                  discuss the requirements and shape a practical direction
-                  together.
+                  You do not need every detail figured out before reaching
+                  out. Share your idea, goals, preferred style, and budget.
+                  We can discuss the requirements and shape a practical
+                  direction together.
                 </p>
               </div>
 
               <div className="lh-package-action">
-                <span className="lh-package-mark" aria-hidden="true">
+                <span
+                  className="lh-package-mark"
+                  aria-hidden="true"
+                >
                   LHIMF<span>.</span>
                 </span>
 
                 <p>
-                  Have a clear plan or just an idea? Let's talk about your next
-                  project.
+                  Have a clear plan or just an idea? Let&apos;s talk about
+                  your next project.
                 </p>
 
                 <Link className="btn" href="/contact">
@@ -271,7 +277,7 @@ export default function AboutPage() {
         </section>
       </main>
 
-    <Footer />
+      <Footer />
     </>
   );
 }

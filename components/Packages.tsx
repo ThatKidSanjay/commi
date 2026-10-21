@@ -1,7 +1,9 @@
-
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+
+type PackageCategory = "Website" | "NFC Card" | "Website + NFC";
 
 type PackageItem = {
   name: string;
@@ -10,7 +12,61 @@ type PackageItem = {
   description: string;
   features: string[];
   note?: string;
+  category: PackageCategory;
+  popular?: boolean;
+  templateLink?: string;
 };
+
+const nfcPackages: PackageItem[] = [
+  {
+    name: "Personalized NFC Profile",
+    price: "₱999",
+    pages: "1 digital profile + 1 NFC card",
+    description:
+      "Make a stronger first impression with a customized profile built around your personal brand.",
+    category: "NFC Card",
+    popular: true,
+    templateLink: "/templates/personalized",
+    features: [
+      "1 NFC card with QR code",
+      "Personal digital profile",
+      "Name and profile photo",
+      "Phone and email contact links",
+      "Up to 8 social media links",
+      "Customized profile design",
+      "Professional title",
+      "Contact-saving button (vCard)",
+      "Personalized colors and layout",
+      "Direct messaging buttons",
+      "Tap-to-open functionality",
+      "Mobile-responsive profile",
+      "Profile setup and deployment",
+      "1 revision round",
+    ],
+  },
+  {
+    name: "Enhanced NFC Business Profile",
+    price: "₱1,499",
+    pages: "1 business profile + 1 NFC card",
+    description:
+      "Present your business professionally with branding, location information, and service highlights.",
+    category: "NFC Card",
+    templateLink: "/templates/enhanced",
+    features: [
+      "Everything in Personalized NFC Profile",
+      "Business logo and branding",
+      "Up to 10 links",
+      "Business contact information",
+      "Business details and location",
+      "Google Maps integration",
+      "Products and services highlights",
+      "Direct inquiry buttons",
+      "QR code for digital sharing",
+      "Mobile-responsive profile",
+      "2 revision rounds",
+    ],
+  },
+];
 
 const websitePackages: PackageItem[] = [
   {
@@ -18,38 +74,41 @@ const websitePackages: PackageItem[] = [
     price: "₱1,499",
     pages: "Up to 3 pages",
     description:
-      "Showcase your skills, experience, and projects with a professional personal portfolio.",
+      "Present your skills, experience, and projects through a professional personal website.",
+    category: "Website",
     features: [
       "Home — Introduction and personal branding",
-      "About Me — Background, skills, and technology stack",
-      "Projects / Contact — Project showcase and contact information",
-      "Personalized portfolio website design",
-      "Social media links",
+      "About — Background, skills, and technologies",
+      "Projects — Portfolio and featured work",
+      "Contact — Contact information and links",
+      "Custom portfolio design",
+      "Social media integration",
       "Mobile-responsive layout",
-      "Basic SEO setup",
+      "Basic SEO configuration",
       "Website deployment",
-      "Up to 2 revision rounds",
+      "2 revision rounds",
     ],
   },
   {
     name: "Event & Invitation Website",
     price: "₱1,499",
-    pages: "1 page",
+    pages: "Single-page website",
     description:
-      "A personalized digital invitation for weddings, birthdays, debuts, and special occasions.",
+      "Turn your special occasion into a personalized digital experience your guests can access anywhere.",
+    category: "Website",
     features: [
-      "Customized event or invitation design",
+      "Personalized event design",
       "Welcome message and event details",
       "Countdown timer",
-      "Event story or couple's story",
+      "Event or couple's story",
       "Photo gallery",
-      "Date, time, and venue details",
+      "Date, time, and venue information",
       "Google Maps integration",
       "RSVP form or confirmation button",
       "Dress code and event program",
       "Mobile-responsive layout",
       "Website deployment",
-      "Up to 2 revision rounds",
+      "2 revision rounds",
     ],
   },
   {
@@ -57,19 +116,21 @@ const websitePackages: PackageItem[] = [
     price: "₱4,999",
     pages: "Up to 5 pages",
     description:
-      "Build your online presence and help customers discover your business and services.",
+      "Build credibility, showcase your services, and help customers discover and connect with your business.",
+    category: "Website",
+    popular: true,
     features: [
-      "Home — Business introduction and highlights",
-      "About Us — Company background and information",
-      "Services / Products — Offerings and descriptions",
-      "Gallery / Portfolio — Business photos or completed projects",
-      "Contact Us — Contact details, inquiry form, and location",
-      "Customized business branding and design",
+      "Home — Business overview and highlights",
+      "About — Company profile and background",
+      "Services — Products or services overview",
+      "Gallery — Business photos or completed projects",
+      "Contact — Contact details and inquiry form",
+      "Customized business branding",
       "Social media integration",
       "Mobile-responsive layout",
-      "Basic SEO setup",
+      "Basic SEO configuration",
       "Website deployment",
-      "Up to 3 revision rounds",
+      "3 revision rounds",
     ],
   },
   {
@@ -77,142 +138,129 @@ const websitePackages: PackageItem[] = [
     price: "₱7,499",
     pages: "Up to 5 pages or screens",
     description:
-      "Streamline basic business processes with a customized web-based system.",
+      "Digitize everyday operations with a customized web-based system designed around your workflow.",
+    category: "Website",
     features: [
-      "Login / Registration — User access, if required",
-      "Dashboard — Overview of system information",
-      "Records Management — View and manage data",
-      "Create / Edit Records — Forms for adding and updating information",
-      "Profile / Settings — Account or system settings",
-      "Database integration, depending on requirements",
+      "Login and registration, if required",
+      "Dashboard and information overview",
+      "Records management",
+      "Create and edit record forms",
+      "Profile and settings",
+      "Database integration, as required",
       "Search, filtering, and sorting, where applicable",
       "Responsive interface",
       "Basic testing and deployment",
-      "Up to 3 revision rounds",
+      "3 revision rounds",
     ],
     note:
-      "Complex workflows, user roles, reports, integrations, and additional screens may cost extra. Final scope depends on system requirements.",
+      "Advanced workflows, user permissions, reports, integrations, and additional screens may require a separate quotation. Final pricing depends on the agreed requirements.",
   },
   {
     name: "Community / Organization Website",
     price: "₱5,999",
     pages: "Up to 6 pages",
     description:
-      "Give your organization a central place to share its identity, activities, and announcements.",
+      "Bring your organization's identity, announcements, members, and activities together in one accessible website.",
+    category: "Website",
     features: [
-      "Home — Organization overview and highlights",
-      "About Us — History, mission, and vision",
-      "Officers / Members — Organization leaders and members",
-      "News / Announcements — Updates and notices",
-      "Events / Activities — Upcoming and past activities",
-      "Contact Us — Contact details and inquiry form",
+      "Home — Organization overview",
+      "About — History, mission, and vision",
+      "Officers and members information",
+      "News and announcements",
+      "Events and activities",
+      "Contact information and inquiry form",
       "Photo gallery",
       "Social media integration",
       "Mobile-responsive layout",
-      "Basic SEO setup",
+      "Basic SEO configuration",
       "Website deployment",
-      "Up to 3 revision rounds",
+      "3 revision rounds",
     ],
   },
 ];
 
-const nfcPackages: PackageItem[] = [
+const websiteNfcBundles: PackageItem[] = [
   {
-    name: "Basic NFC Card",
-    price: "₱599",
-    pages: "1-page digital profile",
+    name: "Portfolio + NFC Bundle",
+    price: "₱2,498",
+    pages: "Website + 1 NFC card",
     description:
-      "A simple tap-to-share digital profile for personal contact information.",
+      "Make your portfolio easier to share at interviews, meetings, and networking events.",
+    category: "Website + NFC",
     features: [
-      "1 NFC card with printed QR code",
-      "Name, profile photo, and short bio",
-      "Phone number and email contact links",
-      "Up to 3 social media links",
-      "Free subdomain under the LHIMF domain",
-      "NFC tap-to-open functionality",
-      "Direct call and email buttons",
-      "Mobile-responsive design",
-      "Basic profile setup and deployment",
-      "1 revision round",
+      "Everything in Portfolio Website (₱1,499)",
+      "1 NFC card with QR code (₱999)",
+      "NFC card linked to your portfolio website",
+      "Showcase your skills and projects",
+      "Convenient tap-to-share access",
+      "Mobile-friendly website",
     ],
   },
   {
-    name: "Personalized Card",
-    price: "₱999",
-    pages: "1-page digital profile",
+    name: "Event Website + NFC Bundle",
+    price: "₱2,498",
+    pages: "Website + 1 NFC card",
     description:
-      "A personalized digital business card with custom styling and convenient contact sharing.",
+      "Give guests convenient access to your event website through a tap or QR scan.",
+    category: "Website + NFC",
     features: [
-      "Everything in the Basic NFC Card package",
-      "Personalized NFC card design",
-      "Custom color theme and profile layout",
-      "Business name and professional title",
-      "Contact-saving button (vCard)",
-      "Up to 5 social media and website links",
-      "Direct messaging buttons",
-      "Basic SEO metadata",
-      "1 revision round",
+      "Everything in Event & Invitation Website (₱1,499)",
+      "1 NFC card with QR code (₱999)",
+      "NFC card linked to your event website",
+      "Event details, venue, and schedule",
+      "Gallery and RSVP features included in the website scope",
+      "Easy sharing of event information",
     ],
   },
   {
-    name: "Business Profile",
-    price: "₱1,499",
-    pages: "1-page business profile",
+    name: "Business + NFC Bundle",
+    price: "₱5,998",
+    pages: "Website + 1 NFC card",
     description:
-      "A professional digital profile designed to present your business and help customers connect.",
+      "Connect potential customers directly to your business website with a single tap.",
+    category: "Website + NFC",
+    popular: true,
     features: [
-      "Everything in the Personalized Card package",
-      "Business logo and brand colors",
-      "Professional business profile layout",
-      "Up to 10 social media and website links",
-      "Complete business contact information",
-      "Business hours and location",
-      "Google Maps directions",
-      "Products or services highlights",
-      "Direct inquiry buttons",
-      "QR code for digital sharing",
-      "Social media sharing preview",
-      "Up to 2 revision rounds",
+      "Everything in Business Website (₱4,999)",
+      "1 NFC card with QR code (₱999)",
+      "NFC card linked to your business website",
+      "Business services and information",
+      "Contact details and social media access",
+      "Convenient customer access",
     ],
   },
   {
-    name: "Premium Profile",
-    price: "₱2,499",
-    pages: "1-page premium business profile",
+    name: "Corporate System + NFC Bundle",
+    price: "₱8,498",
+    pages: "System + 1 NFC card",
     description:
-      "An enhanced business profile with product showcases, promotional sections, and analytics.",
+      "Combine a custom web-based system with NFC access to an agreed public page or system entry point.",
+    category: "Website + NFC",
     features: [
-      "Everything in the Business Profile package",
-      "Enhanced branding and profile design",
-      "Product or service catalog — up to 10 items",
-      "Product images, descriptions, and prices",
-      "Image gallery or portfolio section",
-      "Product inquiry buttons",
-      "Featured promotions and announcements",
-      "Custom profile URL",
-      "Enhanced social sharing preview",
-      "Basic visitor analytics",
-      "Up to 3 revision rounds",
+      "Everything in Corporate / Internal Systems (₱7,499)",
+      "1 NFC card with QR code (₱999)",
+      "NFC card linked to the agreed system page",
+      "Responsive system interface",
+      "Database and features within the agreed scope",
+      "Basic testing and deployment",
     ],
+    note:
+      "The NFC card does not replace authentication or user permissions. System features and final pricing depend on the agreed requirements.",
   },
   {
-    name: "Business Plus",
-    price: "₱3,999",
-    pages: "1 customized profile",
+    name: "Organization + NFC Bundle",
+    price: "₱6,998",
+    pages: "Website + 1 NFC card",
     description:
-      "A more flexible digital business profile with expanded listings and additional custom features.",
+      "Make your organization's website easy to share at meetings, events, and community activities.",
+    category: "Website + NFC",
     features: [
-      "Everything in the Premium Profile package",
-      "Premium NFC card customization",
-      "Advanced profile customization",
-      "Expanded product or service catalog — up to 20 items",
-      "Multiple business contact channels",
-      "Customer inquiry form",
-      "Additional custom profile sections",
-      "Profile visit and button-click tracking",
-      "Priority setup",
-      "Up to 3 revision rounds",
-      "Additional features available upon quotation",
+      "Everything in Community / Organization Website (₱5,999)",
+      "1 NFC card with QR code (₱999)",
+      "NFC card linked to your organization website",
+      "Organization information and announcements",
+      "Activities and event details",
+      "Easy sharing with members and visitors",
     ],
   },
 ];
@@ -220,113 +268,120 @@ const nfcPackages: PackageItem[] = [
 function PackageCard({
   pkg,
   index,
-  comingSoon = false,
 }: {
   pkg: PackageItem;
   index: number;
-  comingSoon?: boolean;
 }) {
   const [showFeatures, setShowFeatures] = useState(false);
 
+  function choosePackage() {
+    const selection = {
+      name: pkg.name,
+      price: pkg.price,
+      category: pkg.category,
+    };
+
+    window.dispatchEvent(
+      new CustomEvent("package-selected", {
+        detail: selection,
+      })
+    );
+
+    window.location.hash = "contact";
+  }
+
   return (
     <article
-      className={`package-card${comingSoon ? " package-card-coming-soon" : ""}`}
+      className={`package-card${pkg.popular ? " package-card-featured" : ""}`}
     >
       <div className="package-top">
         <span className="package-number">
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        {comingSoon ? (
-          <span className="package-status">Coming Soon</span>
-        ) : (
-          <span className="package-pages">{pkg.pages}</span>
-        )}
+        <span className="package-pages">{pkg.pages}</span>
       </div>
+
+      {pkg.popular && (
+        <span className="package-popular">POPULAR CHOICE</span>
+      )}
 
       <h4>{pkg.name}</h4>
 
       <p className="package-description">{pkg.description}</p>
 
-      {comingSoon ? (
-        <div className="package-coming-soon">
-          <span className="package-coming-soon-icon" aria-hidden="true">
-            ◷
-          </span>
+      <div className="package-price">
+        <span className="package-price-label">Package price</span>
+        <strong>{pkg.price}</strong>
+      </div>
 
-          <strong>Launching Soon</strong>
+      <button
+        type="button"
+        className="btn package-cta"
+        onClick={choosePackage}
+      >
+        Select Package <span aria-hidden="true">↗</span>
+      </button>
 
-          <p>
-            Our NFC digital business card packages are currently in
-            development. Stay tuned for updates.
-          </p>
-        </div>
-      ) : (
-        <>
-          <div className="package-price">
-            <span className="package-price-label">Starting at</span>
-            <strong>{pkg.price}</strong>
-          </div>
+      {pkg.templateLink && (
+        <Link
+          href={pkg.templateLink}
+          className="package-template-link"
+        >
+          View Template <span aria-hidden="true">↗</span>
+        </Link>
+      )}
 
-          <a className="btn package-cta" href="/#contact">
-            Choose Package <span aria-hidden="true">↗</span>
-          </a>
+      <button
+        type="button"
+        className="package-toggle"
+        aria-expanded={showFeatures}
+        onClick={() => setShowFeatures((current) => !current)}
+      >
+        <span>
+          {showFeatures ? "Hide Package Details" : "View Package Details"}
+        </span>
 
-          <button
-            type="button"
-            className="package-toggle"
-            aria-expanded={showFeatures}
-            onClick={() => setShowFeatures((current) => !current)}
+        <span
+          className={`package-toggle-icon${showFeatures ? " is-open" : ""}`}
+          aria-hidden="true"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
           >
-            <span>
-              {showFeatures ? "Hide Features" : "Show Features"}
-            </span>
+            <path
+              d="m6 9 6 6 6-6"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
 
-            <span
-              className={`package-toggle-icon${showFeatures ? " is-open" : ""}`}
-              aria-hidden="true"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="m6 9 6 6 6-6"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          </button>
+      {showFeatures && (
+        <div className="package-feature-content">
+          <div className="package-divider" />
 
-          {showFeatures && (
-            <div className="package-feature-content">
-              <div className="package-divider" />
+          <p className="package-includes">WHAT'S INCLUDED</p>
 
-              <p className="package-includes">PACKAGE INCLUDES</p>
+          <ul className="package-features">
+            {pkg.features.map((feature) => (
+              <li key={feature}>
+                <span className="package-check" aria-hidden="true">
+                  ✓
+                </span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
 
-              <ul className="package-features">
-                {pkg.features.map((feature) => (
-                  <li key={feature}>
-                    <span className="package-check" aria-hidden="true">
-                      ✓
-                    </span>
-
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {pkg.note && (
-                <p className="package-note">{pkg.note}</p>
-              )}
-            </div>
-          )}
-        </>
+          {pkg.note && <p className="package-note">{pkg.note}</p>}
+        </div>
       )}
     </article>
   );
@@ -337,40 +392,22 @@ function PackageGroup({
   subtitle,
   packages,
   id,
-  comingSoon = false,
 }: {
   title: string;
   subtitle: string;
   packages: PackageItem[];
   id: string;
-  comingSoon?: boolean;
 }) {
   return (
-    <section
-      className={`package-group${comingSoon ? " package-group-coming-soon" : ""}`}
-      id={id}
-    >
+    <section className="package-group" id={id}>
       <div className="package-heading">
         <p className="label">{subtitle}</p>
-
         <h3>{title}</h3>
-
-        {comingSoon && (
-          <p className="package-group-description">
-            We&apos;re preparing something new. Our NFC packages will be
-            available soon.
-          </p>
-        )}
       </div>
 
       <div className="package-grid">
         {packages.map((pkg, index) => (
-          <PackageCard
-            key={pkg.name}
-            pkg={pkg}
-            index={index}
-            comingSoon={comingSoon}
-          />
+          <PackageCard key={pkg.name} pkg={pkg} index={index} />
         ))}
       </div>
     </section>
@@ -381,18 +418,24 @@ export default function Packages() {
   return (
     <div className="packages">
       <PackageGroup
+        id="nfc-packages"
+        title="NFC Digital Profiles"
+        subtitle="01 / TAP. CONNECT. SHARE."
+        packages={nfcPackages}
+      />
+
+      <PackageGroup
         id="website-packages"
-        title="Website Development Packages"
-        subtitle="CUSTOM WEBSITES"
+        title="Website Development"
+        subtitle="02 / CUSTOM DIGITAL EXPERIENCES"
         packages={websitePackages}
       />
 
       <PackageGroup
-        id="nfc-packages"
-        title="One-Time NFC Card Packages"
-        subtitle="DIGITAL BUSINESS CARDS"
-        packages={nfcPackages}
-        comingSoon
+        id="website-nfc-bundles"
+        title="Website + NFC Bundles"
+        subtitle="03 / A COMPLETE DIGITAL PRESENCE"
+        packages={websiteNfcBundles}
       />
     </div>
   );

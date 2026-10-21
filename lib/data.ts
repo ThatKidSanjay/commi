@@ -14,11 +14,11 @@ export const CONFIG = {
 export type Cat = { id: string; name: string; price: string; note: string; formValue: string };
 
 export const CATS: Cat[] = [
-  { id: "portfolio", name: "Portfolio Websites", price: "₱999", note: "Final quotation depends on content, design, and features.", formValue: "Portfolio Website" },
-  { id: "event", name: "Event & Invitation Websites", price: "₱999", note: "Final quotation depends on design, interactive features, and requested inclusions.", formValue: "Event / Invitation Website" },
-  { id: "business", name: "Business Websites", price: "₱3,999", note: "Final quotation depends on content, features, and integrations.", formValue: "Business Website" },
-  { id: "corporate", name: "Corporate / Internal Systems", price: "₱4,499", note: "Final quotation depends on system functionality and scope.", formValue: "Corporate / Internal System" },
-  { id: "community", name: "Community / Organization Websites", price: "₱4,999", note: "Final quotation depends on inclusions and project requirements.", formValue: "Community / Organization Website" },
+  { id: "portfolio", name: "Portfolio Websites", price: "₱1,499", note: "Final quotation depends on content, design, and features.", formValue: "Portfolio Website" },
+  { id: "event", name: "Event & Invitation Websites", price: "₱1,499", note: "Final quotation depends on design, interactive features, and requested inclusions.", formValue: "Event / Invitation Website" },
+  { id: "business", name: "Business Websites", price: "₱4,999", note: "Final quotation depends on content, features, and integrations.", formValue: "Business Website" },
+  { id: "corporate", name: "Corporate / Internal Systems", price: "₱7,499", note: "Final quotation depends on system functionality and scope.", formValue: "Corporate / Internal System" },
+  { id: "community", name: "Community / Organization Websites", price: "₱5,999", note: "Final quotation depends on inclusions and project requirements.", formValue: "Community / Organization Website" },
 ];
 
 export const IMG_DIR = "/images/";
@@ -57,7 +57,7 @@ export const STEPS: [string, string][] = [
 ];
 
 export const FEATS = [
-  "Landing page", "About page", "Services page", "Portfolio / Gallery", "Contact form",
+  "Landing page", "About page", "Portfolio / Gallery", "Contact form",
   "Booking or inquiry system", "Authentication / Login", "Admin dashboard", "Database integration",
   "Payment integration", "Custom functionality", "Not sure yet",
 ];

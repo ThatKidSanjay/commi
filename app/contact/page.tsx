@@ -46,10 +46,6 @@ export default function ContactPage() {
                 <Link href="#project-form" className="btn">
                   Start a Project <span aria-hidden="true">↓</span>
                 </Link>
-
-                <Link href="/services" className="btn alt">
-                  Explore Services
-                </Link>
               </div>
 
               <p className="home-hero-note">

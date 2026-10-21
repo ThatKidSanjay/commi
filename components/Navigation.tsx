@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
   { label: "Packages", href: "/packages" },
   { label: "Projects", href: "/projects" },
   { label: "Reviews", href: "/reviews" },
@@ -37,9 +36,11 @@ export default function Navigation() {
 
         {/* MOBILE MENU TOGGLE */}
         <button
-          className="nav-toggle"
+          className={`nav-toggle${menuOpen ? " open" : ""}`}
           type="button"
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-label={
+            menuOpen ? "Close navigation" : "Open navigation"
+          }
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
           onClick={() => setMenuOpen((open) => !open)}
@@ -64,7 +65,8 @@ export default function Navigation() {
 
           {links.map(({ label, href }) => {
             const active =
-              pathname === href || pathname.startsWith(`${href}/`);
+              pathname === href ||
+              pathname.startsWith(`${href}/`);
 
             return (
               <Link
@@ -82,8 +84,12 @@ export default function Navigation() {
           {/* CONTACT CTA */}
           <Link
             href="/contact"
-            className={`nav-cta${pathname === "/contact" ? " active" : ""}`}
-            aria-current={pathname === "/contact" ? "page" : undefined}
+            className={`nav-cta${
+              pathname === "/contact" ? " active" : ""
+            }`}
+            aria-current={
+              pathname === "/contact" ? "page" : undefined
+            }
             onClick={closeMenu}
           >
             Start a Project <span aria-hidden="true">↗</span>

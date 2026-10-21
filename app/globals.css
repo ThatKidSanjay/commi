@@ -6306,3 +6306,137 @@ html {
   }
 }
 
+
+/* Remove the navbar container box */
+.site-nav {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+}
+
+/* Remove the inner wrapper box */
+.site-nav .nav-inner {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+}
+
+/* Remove the links container box */
+.site-nav .nav-links {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Keep the logo clean */
+.site-nav .nav-logo {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Keep the mobile menu toggle functional */
+.site-nav .nav-toggle {
+  box-shadow: none;
+}
+
+/* Navbar: Start a Project button */
+.site-nav .nav-cta,
+.site-nav .nav-cta:link,
+.site-nav .nav-cta:visited,
+.site-nav .nav-cta:hover,
+.site-nav .nav-cta:focus,
+.site-nav .nav-cta:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Keep the arrow white */
+.site-nav .nav-cta span {
+  color: #ffffff !important;
+}
+
+/* Black button background */
+.site-nav .nav-cta {
+  background: #000000 !important;
+  border: 1px solid #000000 !important;
+}
+
+/* Optional hover effect */
+.site-nav .nav-cta:hover {
+  background: #222222 !important;
+  border-color: #222222 !important;
+}
+
+/* Featured package */
+.package-card-featured {
+  border: 1px solid #18352c;
+  position: relative;
+}
+
+.package-popular {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 12px;
+  padding: 6px 9px;
+  border-radius: 4px;
+  background: #000000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Clear interactive feedback */
+.package-cta,
+.package-toggle {
+  cursor: pointer;
+}
+
+.package-cta:focus-visible,
+.package-toggle:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 4px;
+}
+
+.package-toggle-icon {
+  transition: transform 180ms ease;
+}
+
+.package-toggle-icon.is-open {
+  transform: rotate(180deg);
+}
+
+
+.package-template-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.package-template-link:hover {
+  background: #000;
+  color: #fff;
+}
+
+.package-template-link span {
+  font-size: 15px;
+}
